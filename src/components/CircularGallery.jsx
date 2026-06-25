@@ -202,7 +202,7 @@ class Media {
     imageWidth = 700,
     imageHeight = 900,
     imagePadding = 2,
-    zoom = 1
+    zoom = 0.7
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -368,8 +368,11 @@ class Media {
       }
     }
     this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (this.imageHeight * this.scale * this.zoom)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (this.imageWidth * this.scale * this.zoom)) / this.screen.width;
+    // Height stays EXACTLY same
+this.plane.scale.y = (this.viewport.height * (this.imageHeight * this.scale * this.zoom)) / this.screen.height;
+
+// Width stretched slightly without affecting height
+this.plane.scale.x = this.plane.scale.y * (this.imageWidth / this.imageHeight) * 1.4;
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
     this.padding = this.imagePadding;
     this.width = this.plane.scale.x + this.padding;
@@ -393,8 +396,8 @@ class GalleryApp {
       imageHeight = 900,
       imagePadding = 2,
       zoom = 1,
-      cameraZ = 60,
-      cameraFOV = 45
+      cameraZ = 55,
+      cameraFOV = 55
     } = {}
   ) {
     document.documentElement.classList.remove('no-js');
