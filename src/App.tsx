@@ -63,7 +63,7 @@ export default function App() {
   const imageWidth = imageHeight * (3 / 4);
 
   const zoomLevel = Math.min(baseWidth / 1200, 1.5);
-
+  
   if (orientation === 'portrait' && screenSize.width <= 768) {
     return (
       <div
