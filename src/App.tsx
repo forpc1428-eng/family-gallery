@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 const customImages = [
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-34-25-033.jpg', text: 'Image 1' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-47-38-445.jpg', text: 'Image 2' },
+  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-36-35-803.jpg', text: 'Image 10' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-44-30-046.jpg', text: 'Image 3' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-21-00-573.jpg', text: 'Image 4' },
-  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-36-35-803.jpg', text: 'Image 10' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-30-09-096.jpg', text: 'Image 5' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-28-09-701.jpg', text: 'Image 6' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-28-55-272.jpg', text: 'Image 7' },
@@ -62,8 +62,18 @@ export default function App() {
   const imageHeight = baseHeight * 0.7;
   const imageWidth = imageHeight * (3 / 4);
 
-  const zoomLevel = Math.min(baseWidth / 1200, 1.5);
-  
+let zoomLevel;
+
+if (baseWidth <= 768) {
+  // Mobile — make it bigger
+  zoomLevel = 1.1;
+} else if (baseWidth <= 1200) {
+  // Tablet / small laptop
+  zoomLevel = 1;
+} else {
+  // Desktop large screens
+  zoomLevel = 0.9;
+}
   if (orientation === 'portrait' && screenSize.width <= 768) {
     return (
       <div
