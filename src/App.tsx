@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react';
 const customImages = [
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-34-25-033.jpg', text: 'Image 1' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-47-38-445.jpg', text: 'Image 2' },
-  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-36-35-803.jpg', text: 'Image 10' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-44-30-046.jpg', text: 'Image 3' },
-  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-21-00-573.jpg', text: 'Image 4' },
-  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-30-09-096.jpg', text: 'Image 5' },
+  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-21-00-573.jpg', text: 'Image 4' },   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-36-35-803.jpg', text: 'Image 10' },
+  { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-30-09-096.jpg', text: 'Image 5' },    { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-36-35-803.jpg', text: 'Image 10' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-28-09-701.jpg', text: 'Image 6' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-28-55-272.jpg', text: 'Image 7' },
   { image: 'https://ik.imagekit.io/uleuotkkw/Picsart_26-06-25_16-12-17-867.jpg', text: 'Image 8' },
