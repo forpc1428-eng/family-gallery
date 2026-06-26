@@ -367,12 +367,13 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 1500;
-    // Height stays EXACTLY same
-this.plane.scale.y = (this.viewport.height * (this.imageHeight * this.scale * this.zoom)) / this.screen.height;
+// Make size based on viewport height directly
+const baseHeight = this.viewport.height * 0.8 * this.zoom;
+const aspect = this.imageWidth / this.imageHeight;
 
-// Width stretched slightly without affecting height
-this.plane.scale.x = this.plane.scale.y * (this.imageWidth / this.imageHeight) * 1.4;
+this.plane.scale.y = baseHeight;
+this.plane.scale.x = baseHeight * aspect;
+
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
     this.padding = this.imagePadding;
     this.width = this.plane.scale.x + this.padding;
